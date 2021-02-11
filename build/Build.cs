@@ -21,8 +21,8 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 [GitHubActions("ci",
     GitHubActionsImage.UbuntuLatest,
     AutoGenerate = true,
-    OnPushBranches = new[] { "master" },
-    OnPullRequestBranches = new[] { "master" },
+    OnPushBranches = new[] { "main" },
+    OnPullRequestBranches = new[] { "main" },
     InvokedTargets = new[] { nameof(Push) },
     ImportSecrets = new[] { "NUGET_API_KEY" })]
 class Build : NukeBuild
