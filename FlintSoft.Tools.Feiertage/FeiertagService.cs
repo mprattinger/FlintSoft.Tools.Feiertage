@@ -22,18 +22,34 @@ namespace FlintSoft.Tools.Feiertage
             load(DateTime.Now.Year);
         }
 
+        /// <summary>
+        /// Checks if the given Date is a holiday
+        /// </summary>
+        /// <param name="value">Date to check</param>
+        /// <returns>true if it is a holiday</returns>
         public bool IsFeiertag(DateTime value)
         {
             load(value.Year);
             return _feierTage.Any(x => x.Date.Date == value.Date);
         }
 
+        /// <summary>
+        /// Returns the Feiertag class for this date
+        /// </summary>
+        /// <param name="value">Holiday date</param>
+        /// <returns>Feiertag object</returns>
         public Feiertag GetFeiertag(DateTime value)
         {
             load(value.Year);
             return _feierTage.FirstOrDefault(x => x.Date.Date == value.Date);
         }
 
+        /// <summary>
+        /// Checks if the given date is a "Fenstertag" (four day weekend) -> Monday if the holiday is on Tuesday or Friday if the holiday is on Thursday
+        /// </summary>
+        /// <param name="value">Date to check</param>
+        /// <param name="lastDayOfWorkWeek">Move the last day of week away from friday. So the Thursday holiday wouldn't be "Fenstertag"</param>
+        /// <returns>true if it is a Fensterag</returns>
         public bool IsFenstertag(DateTime value, DayOfWeek lastDayOfWorkWeek = DayOfWeek.Friday)
         {
             load(value.Year);
