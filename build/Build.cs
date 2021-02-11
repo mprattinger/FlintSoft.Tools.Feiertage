@@ -88,6 +88,7 @@ class Build : NukeBuild
     Target Pack => _ => _
         .DependsOn(Publish)
         .Executes(() => {
+
             DotNetPack(s => s
                 .SetProject(Solution.GetProject("FlintSoft.Tools.Feiertage"))
                 .SetConfiguration(Configuration)
