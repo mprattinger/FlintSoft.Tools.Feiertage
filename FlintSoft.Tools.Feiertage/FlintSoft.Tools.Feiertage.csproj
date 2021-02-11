@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Michael Prattinger</Authors>
+    <Company>FlintSoft</Company>
+    <Product>FlintSoft.Tools</Product>
+    <Copyright>(c) Michael Prattinger 2021</Copyright>
+    <RepositoryUrl>https://github.com/mprattinger/FlintSoft.Tools.Feiertage</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Feiertage, Holidays</PackageTags>
+    <Description>Tool that calculates the holidays of the year. It can also tell you if a given date is a holiday</Description>
   </PropertyGroup>
 
   <ItemGroup>
